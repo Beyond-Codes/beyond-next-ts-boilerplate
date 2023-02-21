@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
       },
     },
     {
-      id: 2,
+      id: 1,
       name: 'Popups',
       url: '/popups',
       classNames: {
