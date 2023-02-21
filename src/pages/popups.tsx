@@ -11,135 +11,156 @@ function Popups() {
   return (
     <>
       <Meta
-        title="Beyond | Popups"
-        description="Popup controls of Beyond NextTS Template"
+        title="Popups | Beyond Next.JS TypeScript Boilerplate"
+        description="The context-based approach enables seamless integration of popup components, making it easy to integrate into your project."
       />
       <Header />
-      <main className="default-fade-in m-0 mt-[100px] flex min-h-screen w-full items-start justify-center bg-[#101010] p-0">
-        <section className="mt-20 grid w-full max-w-theme grid-cols-1 place-content-start place-items-start gap-5 p-5">
-          <h1 className="text-3xl text-zinc-300">Popups</h1>
-          <p className="text-left text-sm text-zinc-500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <section className="flex flex-col items-start justify-start gap-5">
-            <h2 className="text-xl text-zinc-400">Examples</h2>
-            <div className="flex w-fit max-w-[24rem] flex-wrap items-start justify-start gap-5 rounded-md border border-zinc-900 p-5">
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={() => {
-                  activateAlertPopup('Sent successfully!', 'success');
-                }}
-              >
-                Success
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={() => {
-                  activateAlertPopup("It's may take a while.", 'info');
-                }}
-              >
-                Info
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={() => {
+      <main className="default-fade-in mt-[100px] grid min-h-screen w-full grid-cols-1 place-content-start place-items-center gap-5 bg-[#101010] p-5 pt-[100px] font-theme">
+        <h1 className=" max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-4xl text-transparent lg:text-5xl">
+          Popups
+        </h1>
+        <p
+          style={{
+            textAlignLast: 'center',
+          }}
+          className="mt-10 max-w-lg text-justify text-base text-zinc-500"
+        >
+          The context-based approach enables seamless integration of popup
+          components, making it easy to integrate into your project. With
+          expandability in mind, the layout can accommodate additional popups to
+          take your application to the next level.
+        </p>
+
+        <h2 className="mt-10 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-3xl">
+          Examples
+        </h2>
+        <ul className="flex w-fit max-w-[24rem] flex-wrap items-start justify-center gap-5 rounded-md px-5">
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={() => {
+                activateAlertPopup('Sent successfully!', 'success');
+              }}
+            >
+              Success
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={() => {
+                activateAlertPopup("It's may take a while.", 'info');
+              }}
+            >
+              Info
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={() => {
+                activateAlertPopup('An error occured.', 'error');
+              }}
+            >
+              Error
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                activateAlertPopup('Sending your form..', 'loading');
+                await Wait(2000);
+                activateAlertPopup('Your form sent successfully!', 'success');
+              }}
+            >
+              Loading then Success
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                activateAlertPopup('Saving settings..', 'loading');
+                await Wait(2000);
+                activateAlertPopup('Settings saved, please check.', 'info');
+              }}
+            >
+              Loading then Info
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                activateAlertPopup('Sending your form..', 'loading');
+                await Wait(2000);
+                activateAlertPopup(
+                  'An error occured while sending form.',
+                  'error'
+                );
+              }}
+            >
+              Loading then Error
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                activateConfirmPopup('Are you sure want to exit?');
+              }}
+            >
+              Confirm Default
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                const onConfirm = async () => {
+                  deactivateConfirmPopup();
+                  activateAlertPopup('Loading..', 'loading');
+                  await Wait(2000);
+                  activateAlertPopup('Success!', 'success');
+                };
+
+                activateConfirmPopup('Are you sure want to exit?', onConfirm);
+              }}
+            >
+              Confirm with Alert Success
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+              onClick={async () => {
+                const onConfirm = async () => {
+                  deactivateConfirmPopup();
+                  activateAlertPopup('Loading..', 'loading');
+                  await Wait(2000);
                   activateAlertPopup('An error occured.', 'error');
-                }}
-              >
-                Error
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  activateAlertPopup('Sending your form..', 'loading');
-                  await Wait(2000);
-                  activateAlertPopup('Your form sent successfully!', 'success');
-                }}
-              >
-                Loading then Success
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  activateAlertPopup('Saving settings..', 'loading');
-                  await Wait(2000);
-                  activateAlertPopup('Settings saved, please check.', 'info');
-                }}
-              >
-                Loading then Info
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  activateAlertPopup('Sending your form..', 'loading');
-                  await Wait(2000);
-                  activateAlertPopup(
-                    'An error occured while sending form.',
-                    'error'
-                  );
-                }}
-              >
-                Loading then Error
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  activateConfirmPopup('Are you sure want to exit?');
-                }}
-              >
-                Confirm Default
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  const onConfirm = async () => {
-                    deactivateConfirmPopup();
-                    activateAlertPopup('Loading..', 'loading');
-                    await Wait(2000);
-                    activateAlertPopup('Success!', 'success');
-                  };
+                };
 
-                  activateConfirmPopup('Are you sure want to exit?', onConfirm);
-                }}
-              >
-                Confirm with Alert Success
-              </button>
-              <button
-                type="button"
-                className="min-w-[90px] rounded-md bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-                onClick={async () => {
-                  const onConfirm = async () => {
-                    deactivateConfirmPopup();
-                    activateAlertPopup('Loading..', 'loading');
-                    await Wait(2000);
-                    activateAlertPopup('An error occured.', 'error');
-                  };
-
-                  activateConfirmPopup('Are you sure want to exit?', onConfirm);
-                }}
-              >
-                Confirm with Alert Error
-              </button>
-            </div>
-            <p className="text-left text-sm text-zinc-500">
-              and much more, it&apos;s up to you.
-            </p>
-          </section>
-        </section>
+                activateConfirmPopup('Are you sure want to exit?', onConfirm);
+              }}
+            >
+              Confirm with Alert Error
+            </button>
+          </li>
+        </ul>
+        <p className="text-left text-sm text-zinc-500">
+          and much more, it&apos;s up to you.
+        </p>
       </main>
       <Footer />
     </>

@@ -51,7 +51,7 @@ export default function Home(): JSX.Element {
       icon: IoRocketSharp,
       title: 'Deployment Helpers',
       description:
-        'Includes deployment helpers to make your project easier to deploy, like Base URL, Sitemap, Robots.txt, etc.',
+        'Includes deployment helpers to make your project easier to deploy, like Base URL, Auto sitemap, etc.',
     },
     {
       id: 1,
@@ -99,14 +99,27 @@ export default function Home(): JSX.Element {
 
   return (
     <>
-      <Meta title="Beyond" description="Beyond Template" />
+      <Meta
+        title="Beyond | Next.JS TypeScript Boilerplate"
+        description="Jumpstart with this Next.JS TypeScript multi-purpose boilerplate. Expand and customize as needed to
+          fit project's unique requirements."
+      />
       <Header />
       <main className="default-fade-in mt-[100px] grid min-h-screen w-full grid-cols-1 place-content-start place-items-center gap-5 bg-[#101010] p-5 pt-[100px] font-theme">
         <h1 className=" max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-4xl text-transparent lg:text-5xl">
           Faster way to build projects
         </h1>
-        <p className="mt-10 text-center text-base text-zinc-500">
-          A Next.JS boilerplate that uses TypeScript.
+        <p
+          style={{
+            textAlignLast: 'center',
+          }}
+          className="mt-10 max-w-lg text-justify text-base text-zinc-500"
+        >
+          Jumpstart with this Next.JS TypeScript multi-purpose boilerplate.
+          Next.JS, TypeScript, deployment helpers, linters, SEO helpers,
+          multilingual websites, and pure pop-up layouts make building web
+          applications a breeze. Expand and customize as needed to fit
+          project&apos;s unique requirements.
         </p>
         <h2 className="mt-10 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-3xl">
           Features
