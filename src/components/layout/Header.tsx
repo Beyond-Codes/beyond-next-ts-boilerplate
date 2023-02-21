@@ -143,7 +143,7 @@ export default function Header(): JSX.Element {
           <img
             alt="Beyond"
             src={BeyondLogo.src}
-            className="w-14 rounded-md bg-white/10 p-2 transition-all duration-150 group-hover:bg-white/20"
+            className="aspect-square w-14 rounded-md bg-white/10 object-contain p-2 opacity-80 transition-all duration-150 group-hover:bg-white/20 group-hover:opacity-100"
           />
         </Link>
         <nav className="hidden w-fit items-center justify-end gap-5 lg:flex">
