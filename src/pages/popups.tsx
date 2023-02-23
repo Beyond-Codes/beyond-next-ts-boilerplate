@@ -4,8 +4,10 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { usePopup } from '@/contexts/Popup.context';
 import Wait from '@/common/utils/Wait.util';
+import { useIntl } from 'react-intl';
 
 function Popups() {
+  const { formatMessage: t } = useIntl();
   const { activateAlertPopup, activateConfirmPopup, deactivateConfirmPopup } =
     usePopup();
   return (
@@ -17,7 +19,7 @@ function Popups() {
       <Header />
       <main className="default-fade-in mt-[100px] grid min-h-screen w-full grid-cols-1 place-content-start place-items-center gap-5 bg-[#101010] p-5 pt-[100px] font-theme">
         <h1 className=" max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-4xl text-transparent lg:text-5xl">
-          Popups
+          {t({ id: 'popups.heading' })}
         </h1>
         <p
           style={{
@@ -25,14 +27,11 @@ function Popups() {
           }}
           className="mt-10 max-w-lg text-justify text-base text-zinc-500"
         >
-          The context-based approach enables seamless integration of popup
-          components, making it easy to integrate into your project. With
-          expandability in mind, the layout can accommodate additional popups to
-          take your application to the next level.
+          {t({ id: 'popups.description' })}
         </p>
 
         <h2 className="mt-10 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-3xl">
-          Examples
+          {t({ id: 'popups.examples.heading' })}
         </h2>
         <ul className="flex w-fit max-w-[24rem] flex-wrap items-start justify-center gap-5 rounded-md px-5">
           <li>
@@ -159,7 +158,7 @@ function Popups() {
           </li>
         </ul>
         <p className="text-left text-sm text-zinc-500">
-          and much more, it&apos;s up to you.
+          {t({ id: 'popups.examples.last-text' })}
         </p>
       </main>
       <Footer />

@@ -8,6 +8,8 @@ import {
 } from '@/types/header.types';
 
 import BeyondLogo from '@/public/assets/img/beyond.png';
+import { useLanguage } from '@/contexts/Language.context';
+import { useIntl } from 'react-intl';
 
 const ClassNames: HeaderLinkClassName = {
   desktop:
@@ -31,12 +33,14 @@ function MobileMenu({ isActive, children }: MobileMenuProps): JSX.Element {
 }
 
 export default function Header(): JSX.Element {
+  const { formatMessage: t } = useIntl();
   const [mobileMenu, setMobileMenu] = React.useState<boolean>(false);
+  const { language, changeLanguage } = useLanguage();
 
   const HeaderLinks: HeaderLink[] = [
     {
       id: 0,
-      name: 'Home',
+      name: 'header.links.0',
       url: '/',
       classNames: {
         desktop: ClassNames.desktop,
@@ -45,16 +49,7 @@ export default function Header(): JSX.Element {
     },
     {
       id: 1,
-      name: 'Popups',
-      url: '/popups',
-      classNames: {
-        desktop: ClassNames.desktop,
-        mobile: ClassNames.mobile,
-      },
-    },
-    {
-      id: 2,
-      name: 'Language',
+      name: 'header.links.1',
       url: '/language',
       classNames: {
         desktop: ClassNames.desktop,
@@ -62,8 +57,17 @@ export default function Header(): JSX.Element {
       },
     },
     {
+      id: 2,
+      name: 'header.links.2',
+      url: '/popups',
+      classNames: {
+        desktop: ClassNames.desktop,
+        mobile: ClassNames.mobile,
+      },
+    },
+    {
       id: 3,
-      name: 'Github',
+      name: 'header.links.3',
       url: 'https://github.com/beyond-codes/next-ts-template',
       classNames: {
         desktop: ClassNames.desktop,
@@ -84,11 +88,11 @@ export default function Header(): JSX.Element {
               target="_blank"
               rel="noreferrer"
             >
-              {name}
+              {t({ id: name })}
             </a>
           ) : (
             <Link className={className} href={url}>
-              {name}
+              {t({ id: name })}
             </Link>
           )}
         </li>
@@ -109,11 +113,11 @@ export default function Header(): JSX.Element {
               target="_blank"
               rel="noreferrer"
             >
-              {name}
+              {t({ id: name })}
             </a>
           ) : (
             <Link className={className} href={url}>
-              {name}
+              {t({ id: name })}
             </Link>
           )}
         </li>
@@ -148,6 +152,15 @@ export default function Header(): JSX.Element {
         </Link>
         <nav className="hidden w-fit items-center justify-end gap-5 lg:flex">
           {getDesktopElements()}
+          <li>
+            <button
+              type="button"
+              className={ClassNames.desktop}
+              onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
+            >
+              {language === 'tr' ? 'EN' : 'TR'}
+            </button>
+          </li>
         </nav>
         <button
           type="button"

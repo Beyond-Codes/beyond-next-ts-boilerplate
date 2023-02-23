@@ -8,6 +8,7 @@ import { RiMessageFill } from 'react-icons/ri';
 import { BsFillFileBarGraphFill } from 'react-icons/bs';
 import { SiEslint, SiTypescript } from 'react-icons/si';
 import { IoRocketSharp, IoLanguage } from 'react-icons/io5';
+import { useIntl } from 'react-intl';
 
 type FeatureElementProps = {
   id: number;
@@ -22,6 +23,8 @@ function FeatureElement({
   title,
   description,
 }: FeatureElementProps): JSX.Element {
+  const { formatMessage: t } = useIntl();
+
   return (
     <li
       data-id={id}
@@ -30,9 +33,11 @@ function FeatureElement({
       <span className="pointer-events-none absolute left-0 top-0 h-full w-full bg-transparent transition-all duration-200 group-hover:bg-white/5" />
       <h3 className="flex items-center justify-start gap-2">
         <FeatureIcon className="relative -ml-2 h-9 w-9 rounded-md  p-1.5 text-zinc-400" />
-        <span className="text-base text-zinc-400">{title}</span>
+        <span className="text-base text-zinc-400">{t({ id: title })}</span>
       </h3>
-      <p className="mt-3 text-left text-sm text-zinc-300/70">{description}</p>
+      <p className="mt-3 text-left text-sm text-zinc-300/70">
+        {t({ id: description })}
+      </p>
     </li>
   ) as JSX.Element;
 }
@@ -42,44 +47,38 @@ export default function Home(): JSX.Element {
     {
       id: 0,
       icon: SiTypescript,
-      title: 'TypeScript',
-      description:
-        "It's is built with TypeScript. TypeScipt is a typed superset of JavaScript that compiles to plain JavaScript.",
+      title: 'homepage.features.elements.0.heading',
+      description: 'homepage.features.elements.0.description',
     },
     {
       id: 3,
       icon: IoRocketSharp,
-      title: 'Deployment Helpers',
-      description:
-        'Includes deployment helpers to make your project easier to deploy, like Base URL, Auto sitemap, etc.',
+      title: 'homepage.features.elements.1.heading',
+      description: 'homepage.features.elements.1.description',
     },
     {
       id: 1,
       icon: SiEslint,
-      title: 'Linters',
-      description:
-        'Includes ESLint and Prettier configured for TypeScript to make your code more readable and consistent.',
+      title: 'homepage.features.elements.2.heading',
+      description: 'homepage.features.elements.2.description',
     },
     {
       id: 2,
       icon: BsFillFileBarGraphFill,
-      title: 'SEO Helpers',
-      description:
-        'Includes SEO helpers to make your project more search engine friendly, like Meta Tags, Open Graph, OG tags, etc.',
+      title: 'homepage.features.elements.3.heading',
+      description: 'homepage.features.elements.3.description',
     },
     {
       id: 4,
       icon: IoLanguage,
-      title: 'Multilingual',
-      description:
-        'Includes multilingual layout to make your project multilingual, ready to use i18n.',
+      title: 'homepage.features.elements.4.heading',
+      description: 'homepage.features.elements.4.description',
     },
     {
       id: 5,
       icon: RiMessageFill,
-      title: 'Popups',
-      description:
-        'Includes popups layout to make your project have pure popups without any packages.',
+      title: 'homepage.features.elements.5.heading',
+      description: 'homepage.features.elements.5.description',
     },
   ];
 
@@ -97,6 +96,8 @@ export default function Home(): JSX.Element {
     return elements as JSX.Element[];
   };
 
+  const { formatMessage: t } = useIntl();
+
   return (
     <>
       <Meta
@@ -107,7 +108,7 @@ export default function Home(): JSX.Element {
       <Header />
       <main className="default-fade-in mt-[100px] grid min-h-screen w-full grid-cols-1 place-content-start place-items-center gap-5 bg-[#101010] p-5 pt-[100px] font-theme">
         <h1 className=" max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-4xl text-transparent lg:text-5xl">
-          Faster way to build projects
+          {t({ id: 'homepage.heading' })}
         </h1>
         <p
           style={{
@@ -115,14 +116,10 @@ export default function Home(): JSX.Element {
           }}
           className="mt-10 max-w-lg text-justify text-base text-zinc-500"
         >
-          Jumpstart with this Next.JS TypeScript multi-purpose boilerplate.
-          Next.JS, TypeScript, deployment helpers, linters, SEO helpers,
-          multilingual websites, and pure pop-up layouts make building web
-          applications a breeze. Expand and customize as needed to fit
-          project&apos;s unique requirements.
+          {t({ id: 'homepage.description' })}
         </p>
         <h2 className="mt-10 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-3xl">
-          Features
+          {t({ id: 'homepage.features.heading' })}
         </h2>
         <section className="grid w-fit max-w-theme auto-rows-fr grid-cols-1 place-content-start place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
           {getFeatureGrid() as JSX.Element[]}
