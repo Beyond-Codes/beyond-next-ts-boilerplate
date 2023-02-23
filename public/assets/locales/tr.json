@@ -1,3 +1,46 @@
 {
-  "hello": "Merhaba"
+  "header": {
+    "links": ["Anasayfa", "Çoklu Dil", "Pop-uplar", "Github"]
+  },
+  "homepage": {
+    "heading": "Proje oluşturmanın hızlı yolu",
+    "description": "Next.JS TypeScript çok amaçlı şablonu ile hızlıca başlayın. Next.JS, TypeScript, deployment yardımcıları, linter, SEO yardımcıları, çoklu dil web uygulamaları ve hazır pop-up düzenleri, hızlıca web uygulamaları oluşturmayı kolaylaştırır. Projenin özel gereksinimlerine göre genişletin ve özelleştirin.",
+    "features": {
+      "heading": "Özellikler",
+      "elements": [
+        {
+          "heading": "TypeScript",
+          "description": "TypeScript ile oluşturuldu. TypeScript, JavaScript'in yazılan bir alt kümesidir ve JavaScript'e derlenir."
+        },
+        {
+          "heading": "Deployment Yardımcıları",
+          "description": "Projenizi kolayca dağıtmak için dağıtım yardımcıları içerir, örneğin Alt URL, Otomatik sitemap vb."
+        },
+        {
+          "heading": "Linter",
+          "description": "TypeScript için yapılandırılmış ESLint ve Prettier ile kodunuzu daha okunabilir ve tutarlı hale getirin."
+        },
+        {
+          "heading": "SEO Yardımcıları",
+          "description": "Meta etiketleri, OG etiketleri vb. gibi, uygulamanızı arama motoru dostu yapmak için SEO yardımcıları içerir."
+        },
+        {
+          "heading": "Çoklu Dil",
+          "description": "Çoklu dil düzeni, projenizi çoklu dil yapmak için hazır ve kullanıma hazır i18n içerir."
+        },
+        {
+          "heading": "Pop-uplar",
+          "description": "Projenizin paket olmadan kullanıma hazır pop-up'lar içeren bir düzeni olmasını sağlar."
+        }
+      ]
+    }
+  },
+  "popups": {
+    "heading": "Pop-uplar",
+    "description": "Context tabanlı yaklaşım, pop-up bileşenlerinin akıcı bir şekilde entegre edilmesini sağlar, projenize entegre etmenizi kolaylaştırır. Genişletilebilirliği göz önünde bulundurarak, düzen, uygulamanızı bir sonraki seviyeye taşımak için ek pop-up'ları da kabul edebilir.",
+    "examples": {
+      "heading": "Örnekler",
+      "last-text": "ve daha fazlası, tamamen size kalmış."
+    }
+  }
 }
