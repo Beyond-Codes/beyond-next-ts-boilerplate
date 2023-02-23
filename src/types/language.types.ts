@@ -4,7 +4,7 @@ export type LanguageContextType = {
 };
 
 export type TranslationFile = {
-  [key: string]: string | TranslationFile;
+  [key: string]: string | TranslationFile | Array<string | TranslationFile>;
 };
 
 export type UseLanguageHook = {
