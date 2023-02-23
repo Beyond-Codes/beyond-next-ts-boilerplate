@@ -50,7 +50,7 @@ export default function Header(): JSX.Element {
     {
       id: 1,
       name: 'header.links.1',
-      url: '/language',
+      url: '/multilingual',
       classNames: {
         desktop: ClassNames.desktop,
         mobile: ClassNames.mobile,

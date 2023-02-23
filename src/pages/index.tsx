@@ -124,6 +124,9 @@ export default function Home(): JSX.Element {
         <section className="grid w-fit max-w-theme auto-rows-fr grid-cols-1 place-content-start place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
           {getFeatureGrid() as JSX.Element[]}
         </section>
+        <p className="text-left text-sm text-zinc-500">
+          {t({ id: 'homepage.last-text' })}
+        </p>
       </main>
       <Footer />
     </>

@@ -3,44 +3,52 @@
     "links": ["Anasayfa", "Çoklu Dil", "Pop-uplar", "Github"]
   },
   "homepage": {
-    "heading": "Proje oluşturmanın hızlı yolu",
-    "description": "Next.JS TypeScript çok amaçlı şablonu ile hızlıca başlayın. Next.JS, TypeScript, deployment yardımcıları, linter, SEO yardımcıları, çoklu dil web uygulamaları ve hazır pop-up düzenleri, hızlıca web uygulamaları oluşturmayı kolaylaştırır. Projenin özel gereksinimlerine göre genişletin ve özelleştirin.",
+    "heading": "Hızlı proje geliştirme yolu",
+    "description": "Next.JS TypeScript çok amaçlı şablonu ile web uygulamaları oluşturmak kolaylaşıyor. Next.JS, TypeScript, dağıtım yardımcıları, linterlar, SEO yardımcıları, çoklu dil desteği ve paketsiz pop-up düzenleri ile web uygulamaları oluşturmak artık çok kolay. Projelerin benzersiz ihtiyaçlarına uyacak şekilde genişletilebilir ve özelleştirilebilir.",
     "features": {
       "heading": "Özellikler",
       "elements": [
         {
           "heading": "TypeScript",
-          "description": "TypeScript ile oluşturuldu. TypeScript, JavaScript'in yazılan bir alt kümesidir ve JavaScript'e derlenir."
+          "description": "TypeScript ile oluşturuldu. TypeScript, düz JavaScript'e derlenebilen, tip dışavurumu içeren bir JavaScript üst kümesidir."
         },
         {
           "heading": "Deployment Yardımcıları",
-          "description": "Projenizi kolayca dağıtmak için dağıtım yardımcıları içerir, örneğin Alt URL, Otomatik sitemap vb."
+          "description": "Projenizin dağıtımını kolaylaştırmak için Base URL, Otomatik site haritası vb. gibi dağıtım yardımcılarını içerir."
         },
         {
           "heading": "Linter",
-          "description": "TypeScript için yapılandırılmış ESLint ve Prettier ile kodunuzu daha okunabilir ve tutarlı hale getirin."
+          "description": "Kodunuzu daha okunaklı ve tutarlı hale getirmek için TypeScript için yapılandırılmış ESLint ve Prettier dahil edilmiştir."
         },
         {
           "heading": "SEO Yardımcıları",
-          "description": "Meta etiketleri, OG etiketleri vb. gibi, uygulamanızı arama motoru dostu yapmak için SEO yardımcıları içerir."
+          "description": "Projenizi arama motoru dostu hale getirmek için Meta Etiketleri, Open Graph, OG etiketleri vb. gibi SEO yardımcılarını içerir."
         },
         {
           "heading": "Çoklu Dil",
-          "description": "Çoklu dil düzeni, projenizi çoklu dil yapmak için hazır ve kullanıma hazır i18n içerir."
+          "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için çoklu dil düzeni ve i18n desteği dahil edilmiştir."
         },
         {
           "heading": "Pop-uplar",
-          "description": "Projenizin paket olmadan kullanıma hazır pop-up'lar içeren bir düzeni olmasını sağlar."
+          "description": "Paket gerektirmeksizin projenize saf pop-up'lar eklemek için pop-up düzeni dahil edilmiştir."
         }
       ]
-    }
+    },
+    "last-text": "ve daha fazlası."
   },
   "popups": {
     "heading": "Pop-uplar",
-    "description": "Context tabanlı yaklaşım, pop-up bileşenlerinin akıcı bir şekilde entegre edilmesini sağlar, projenize entegre etmenizi kolaylaştırır. Genişletilebilirliği göz önünde bulundurarak, düzen, uygulamanızı bir sonraki seviyeye taşımak için ek pop-up'ları da kabul edebilir.",
+    "description": "Context temelli yaklaşım, popup bileşenlerinin sorunsuz bir şekilde entegre edilmesine olanak tanır ve projenize entegre etmeyi kolaylaştırır. Genişletilebilirlik göz önünde bulundurularak, düzen ek pop-up'ları barındırarak uygulamanızı bir sonraki seviyeye taşıyabilir.",
     "examples": {
       "heading": "Örnekler",
       "last-text": "ve daha fazlası, tamamen size kalmış."
+    }
+  },
+  "multilingual": {
+    "heading": "Çoklu Dil",
+    "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için çoklu dil düzeni ve i18n desteği dahil edilmiştir.",
+    "example": {
+      "heading": "Örnek"
     }
   }
 }

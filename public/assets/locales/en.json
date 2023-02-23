@@ -33,7 +33,8 @@
           "description": "Includes popups layout to make your project have pure popups without any packages."
         }
       ]
-    }
+    },
+    "last-text": "and much more."
   },
   "popups": {
     "heading": "Popups",
@@ -41,6 +42,13 @@
     "examples": {
       "heading": "Examples",
       "last-text": "and much more, it's up to you."
+    }
+  },
+  "multilingual": {
+    "heading": "Multilingual",
+    "description": "Includes multilingual layout to make your project multilingual, ready to use i18n.",
+    "example": {
+      "heading": "Example"
     }
   }
 }

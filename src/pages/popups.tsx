@@ -6,7 +6,7 @@ import { usePopup } from '@/contexts/Popup.context';
 import Wait from '@/common/utils/Wait.util';
 import { useIntl } from 'react-intl';
 
-function Popups() {
+function Popups(): JSX.Element {
   const { formatMessage: t } = useIntl();
   const { activateAlertPopup, activateConfirmPopup, deactivateConfirmPopup } =
     usePopup();
