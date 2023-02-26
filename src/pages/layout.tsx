@@ -50,6 +50,40 @@ function Layout() {
           {t({ id: 'layout.description' })}
         </p>
         <h2 className="mt-20 max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-3xl text-transparent lg:text-4xl">
+          {t({ id: 'layout.multilingual.heading' })}
+        </h2>
+        <p
+          style={{
+            textAlignLast: 'center',
+          }}
+          className="mt-5 max-w-lg text-justify text-base text-zinc-500"
+        >
+          {t({ id: 'layout.multilingual.description' })}
+        </p>
+        <h3 className="mt-5 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-2xl">
+          {t({ id: 'layout.multilingual.example.heading' })}
+        </h3>
+        <section className="flex items-center justify-center">
+          <button
+            onClick={() => {
+              changeLanguage('en');
+            }}
+            className="min-w-[90px] rounded-l-md border-r border-r-zinc-900 bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+            type="button"
+          >
+            EN
+          </button>
+          <button
+            onClick={() => {
+              changeLanguage('tr');
+            }}
+            className="min-w-[90px] rounded-r-md border-l border-l-zinc-900 bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
+            type="button"
+          >
+            TR
+          </button>
+        </section>
+        <h2 className="mt-10 max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-3xl text-transparent lg:text-4xl">
           {t({ id: 'layout.popups.heading' })}
         </h2>
         <p
@@ -169,43 +203,9 @@ function Layout() {
             </PopupActivator>
           </li>
         </ul>
-        <p className="text-left text-sm text-zinc-500">
+        <p className="mb-32 text-left text-sm text-zinc-500">
           {t({ id: 'layout.popups.examples.last-text' })}
         </p>
-        <h2 className="mt-20 max-w-sm bg-gradient-to-br from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-3xl text-transparent lg:text-4xl">
-          {t({ id: 'layout.multilingual.heading' })}
-        </h2>
-        <p
-          style={{
-            textAlignLast: 'center',
-          }}
-          className="mt-5 max-w-lg text-justify text-base text-zinc-500"
-        >
-          {t({ id: 'layout.multilingual.description' })}
-        </p>
-        <h3 className="mt-5 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-2xl">
-          {t({ id: 'layout.multilingual.example.heading' })}
-        </h3>
-        <section className="flex items-center justify-center pb-32">
-          <button
-            onClick={() => {
-              changeLanguage('en');
-            }}
-            className="min-w-[90px] rounded-l-md border-r border-r-zinc-900 bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-            type="button"
-          >
-            EN
-          </button>
-          <button
-            onClick={() => {
-              changeLanguage('tr');
-            }}
-            className="min-w-[90px] rounded-r-md border-l border-l-zinc-900 bg-white/10 px-4 py-1 text-center text-sm text-zinc-300 transition-all duration-150 hover:bg-white/20 disabled:pointer-events-none disabled:opacity-50"
-            type="button"
-          >
-            TR
-          </button>
-        </section>
       </main>
       <Footer />
     </>
