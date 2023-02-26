@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useIntl } from 'react-intl';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import {
   HeaderLink,
@@ -9,7 +10,6 @@ import {
 
 import BeyondLogo from '@/public/assets/img/beyond.png';
 import { useLanguage } from '@/contexts/Language.context';
-import { useIntl } from 'react-intl';
 
 const ClassNames: HeaderLinkClassName = {
   desktop:
@@ -50,16 +50,7 @@ export default function Header(): JSX.Element {
     {
       id: 1,
       name: 'header.links.1',
-      url: '/multilingual',
-      classNames: {
-        desktop: ClassNames.desktop,
-        mobile: ClassNames.mobile,
-      },
-    },
-    {
-      id: 2,
-      name: 'header.links.2',
-      url: '/popups',
+      url: '/layout',
       classNames: {
         desktop: ClassNames.desktop,
         mobile: ClassNames.mobile,
@@ -67,7 +58,7 @@ export default function Header(): JSX.Element {
     },
     {
       id: 3,
-      name: 'header.links.3',
+      name: 'header.links.2',
       url: 'https://github.com/beyond-codes/next-ts-template',
       classNames: {
         desktop: ClassNames.desktop,
