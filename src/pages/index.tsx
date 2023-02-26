@@ -1,14 +1,14 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 import Meta from '@/components/layout/Meta';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 import { IconType } from 'react-icons';
-import { RiMessageFill } from 'react-icons/ri';
+import { AiFillLayout } from 'react-icons/ai';
+import { IoRocketSharp } from 'react-icons/io5';
 import { BsFillFileBarGraphFill } from 'react-icons/bs';
 import { SiEslint, SiTypescript } from 'react-icons/si';
-import { IoRocketSharp, IoLanguage } from 'react-icons/io5';
-import { useIntl } from 'react-intl';
 
 type FeatureElementProps = {
   id: number;
@@ -28,7 +28,7 @@ function FeatureElement({
   return (
     <li
       data-id={id}
-      className="group relative flex h-full w-full max-w-[300px] flex-col items-start justify-start gap-5 gap-y-0 overflow-hidden rounded-md border border-zinc-600 bg-gradient-to-br from-white/5 to-white/20 p-5 transition-all duration-200"
+      className="group relative flex h-full min-h-[calc(175px_+_1vw)] w-full max-w-[300px] flex-col items-start justify-start gap-5 gap-y-0 overflow-hidden rounded-md border border-zinc-600 bg-gradient-to-br from-white/5 to-white/20 p-5 transition-all duration-200"
     >
       <span className="pointer-events-none absolute left-0 top-0 h-full w-full bg-transparent transition-all duration-200 group-hover:bg-white/5" />
       <h3 className="flex items-center justify-start gap-2">
@@ -70,15 +70,9 @@ export default function Home(): JSX.Element {
     },
     {
       id: 4,
-      icon: IoLanguage,
+      icon: AiFillLayout,
       title: 'homepage.features.elements.4.heading',
       description: 'homepage.features.elements.4.description',
-    },
-    {
-      id: 5,
-      icon: RiMessageFill,
-      title: 'homepage.features.elements.5.heading',
-      description: 'homepage.features.elements.5.description',
     },
   ];
 
@@ -121,7 +115,7 @@ export default function Home(): JSX.Element {
         <h2 className="mt-10 bg-gradient-to-b from-zinc-200 to-zinc-700 bg-clip-text p-1 text-center text-xl text-transparent lg:text-3xl">
           {t({ id: 'homepage.features.heading' })}
         </h2>
-        <section className="grid w-fit max-w-theme auto-rows-fr grid-cols-1 place-content-start place-items-center gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <section className="flex w-fit max-w-theme auto-rows-fr flex-wrap items-start justify-center gap-5 ">
           {getFeatureGrid() as JSX.Element[]}
         </section>
         <p className="text-left text-sm text-zinc-500">
