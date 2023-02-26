@@ -1,6 +1,6 @@
 {
   "header": {
-    "links": ["Anasayfa", "Çoklu Dil", "Pop-uplar", "Github"]
+    "links": ["Anasayfa", "Yapı", "Github"]
   },
   "homepage": {
     "heading": "Hızlı proje geliştirme yolu",
@@ -25,30 +25,31 @@
           "description": "Projenizi arama motoru dostu hale getirmek için Meta Etiketleri, Open Graph, OG etiketleri vb. gibi SEO yardımcılarını içerir."
         },
         {
-          "heading": "Çoklu Dil",
-          "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için çoklu dil düzeni ve i18n desteği dahil edilmiştir."
-        },
-        {
-          "heading": "Pop-uplar",
-          "description": "Paket gerektirmeksizin projenize saf pop-up'lar eklemek için pop-up düzeni dahil edilmiştir."
+          "heading": "Yapı",
+          "description": "Genişletilebilir bileşenler içeren bir düzen özelliği içerir: i18n (çoklu dil), hazır popup yapıları ve daha fazlası."
         }
       ]
     },
     "last-text": "ve daha fazlası."
   },
-  "popups": {
-    "heading": "Pop-uplar",
-    "description": "Context temelli yaklaşım, popup bileşenlerinin sorunsuz bir şekilde entegre edilmesine olanak tanır ve projenize entegre etmeyi kolaylaştırır. Genişletilebilirlik göz önünde bulundurularak, düzen ek pop-up'ları barındırarak uygulamanızı bir sonraki seviyeye taşıyabilir.",
-    "examples": {
-      "heading": "Örnekler",
-      "last-text": "ve daha fazlası, tamamen size kalmış."
-    }
-  },
-  "multilingual": {
-    "heading": "Çoklu Dil",
-    "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için çoklu dil düzeni ve i18n desteği dahil edilmiştir.",
-    "example": {
-      "heading": "Örnek"
+
+  "layout": {
+    "heading": "Yapı",
+    "description": "Genişletilebilir bileşenler içeren bir düzen özelliği içerir: i18n (çoklu dil), hazır popup yapıları ve daha fazlası.",
+    "popups": {
+      "heading": "Pop-uplar",
+      "description": "Context temelli yaklaşım, popup bileşenlerinin sorunsuz bir şekilde entegre edilmesine olanak tanır ve projenize entegre etmeyi kolaylaştırır. Genişletilebilirlik göz önünde bulundurularak, düzen ek pop-up'ları barındırarak uygulamanızı bir sonraki seviyeye taşıyabilir.",
+      "examples": {
+        "heading": "Örnekler",
+        "last-text": "ve daha fazlası, tamamen size kalmış."
+      }
+    },
+    "multilingual": {
+      "heading": "Çoklu Dil",
+      "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için genişletilebilir çoklu dil düzeni ve i18n desteği dahil edilmiştir.",
+      "example": {
+        "heading": "Örnek"
+      }
     }
   }
 }

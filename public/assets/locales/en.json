@@ -1,6 +1,6 @@
 {
   "header": {
-    "links": ["Home", "Multilingual", "Popups", "Github"]
+    "links": ["Home", "Layout", "Github"]
   },
   "homepage": {
     "heading": "Faster way to build projects",
@@ -25,30 +25,31 @@
           "description": "Includes SEO helpers to make your project more search engine friendly, like Meta Tags, Open Graph, OG tags, etc."
         },
         {
-          "heading": "Multilingual",
-          "description": "Includes multilingual layout to make your project multilingual, ready to use i18n."
-        },
-        {
-          "heading": "Popups",
-          "description": "Includes popups layout to make your project have pure popups without any packages."
+          "heading": "Layout",
+          "description": "Includes a layout feature that includes expandable components: i18n and popup wrapper and more."
         }
       ]
     },
     "last-text": "and much more."
   },
-  "popups": {
-    "heading": "Popups",
-    "description": "The context-based approach enables seamless integration of popup components, making it easy to integrate into your project. With expandability in mind, the layout can accommodate additional popups to take your application to the next level.",
-    "examples": {
-      "heading": "Examples",
-      "last-text": "and much more, it's up to you."
-    }
-  },
-  "multilingual": {
-    "heading": "Multilingual",
-    "description": "Includes multilingual layout to make your project multilingual, ready to use i18n.",
-    "example": {
-      "heading": "Example"
+
+  "layout": {
+    "heading": "Layout",
+    "description": "Includes a layout feature that includes expandable components: i18n and popup wrapper and more.",
+    "popups": {
+      "heading": "Popups",
+      "description": "The context-based approach enables seamless integration of popup components, making it easy to integrate into your project. With expandability in mind, the layout can accommodate additional popups to take your application to the next level.",
+      "examples": {
+        "heading": "Examples",
+        "last-text": "and much more, it's up to you."
+      }
+    },
+    "multilingual": {
+      "heading": "Multilingual",
+      "description": "Includes expandable multilingual layout to make your project multilingual, ready to use i18n.",
+      "example": {
+        "heading": "Example"
+      }
     }
   }
 }
