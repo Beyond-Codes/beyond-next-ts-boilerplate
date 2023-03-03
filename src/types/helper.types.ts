@@ -9,6 +9,9 @@ export interface HelperSelectOption {
 
 export interface ApiHelperClass {
   readonly API: Axios;
+  readonly defaultError: string;
+
+  errorHandler(error: any): string;
   getCountries(): Promise<{
     data: HelperSelectOption[] | null;
     error: HelperError;
