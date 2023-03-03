@@ -139,16 +139,18 @@ export default function Header(): JSX.Element {
           />
         </Link>
         <nav className="hidden w-fit items-center justify-end gap-5 lg:flex">
-          {getDesktopElements()}
-          <li>
-            <button
-              type="button"
-              className={ClassNames.desktop}
-              onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
-            >
-              EN/TR
-            </button>
-          </li>
+          <ul className="flex w-fit items-center justify-end gap-5">
+            {getDesktopElements()}
+            <li>
+              <button
+                type="button"
+                className={ClassNames.desktop}
+                onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
+              >
+                EN/TR
+              </button>
+            </li>
+          </ul>
         </nav>
         <button
           type="button"
