@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        theme: '1000px',
+        theme: '40rem',
       },
       fontFamily: {
-        theme: 'Poppins, sans-serif',
+        theme: 'Inter',
       },
     },
   },
