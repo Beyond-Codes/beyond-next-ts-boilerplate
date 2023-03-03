@@ -52,7 +52,7 @@ export default function Header(): JSX.Element {
     {
       id: 1,
       name: 'header.links.1',
-      url: 'https://github.com/beyond-codes/next-ts-template',
+      url: 'https://github.com/Beyond-Codes/beyond-next-ts-boilerplate',
       classNames: {
         desktop: ClassNames.desktop,
         mobile: ClassNames.mobile,
