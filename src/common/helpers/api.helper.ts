@@ -5,13 +5,27 @@ import { ApiHelperClass } from '@/types/helper.types';
 class ApiHelper implements ApiHelperClass {
   public readonly API: Axios;
 
+  public readonly defaultError: string;
+
   constructor() {
     this.API = API;
+    this.defaultError = '😕 Oops, something went wrong.';
+  }
+
+  errorHandler(error: any): string {
+    return (
+      error?.response?.data?.message ||
+      error?.response?.data?.text ||
+      this.defaultError
+    );
   }
 
   public async getCountries() {
     try {
-      const { data } = await this.API.get('/countries');
+      const { data } = await this.API.get('/countries').catch((error) => {
+        throw new Error(this.errorHandler(error));
+      });
+
       return {
         data,
         error: null,
@@ -19,7 +33,7 @@ class ApiHelper implements ApiHelperClass {
     } catch (error: any) {
       return {
         data: null,
-        error: error?.message || '😕 Oops,Something went wrong.',
+        error: error?.message || this.defaultError,
       };
     }
   }
