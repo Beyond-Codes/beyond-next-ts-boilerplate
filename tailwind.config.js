@@ -4,12 +4,17 @@ module.exports = {
   theme: {
     extend: {
       maxWidth: {
-        theme: '1200px',
+        theme: '1000px',
       },
       fontFamily: {
         theme: 'Poppins, sans-serif',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
+  ],
 };
