@@ -10,7 +10,9 @@
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json"
+    "tsconfigRootDir": ".",
+    "project": ["tsconfig.json"],
+    "createDefaultProgram": true
   },
   "extends": [
     "next",
