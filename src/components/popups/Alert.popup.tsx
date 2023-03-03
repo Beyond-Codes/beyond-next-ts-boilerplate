@@ -15,10 +15,10 @@ function AlertPopup(): JSX.Element | null {
 
   return (alertPopup?.inHTML && (
     <div
-      className={`${containerClass} fixed left-0 top-0 z-[9998] flex h-full w-full items-center justify-center overflow-hidden bg-black/70 p-5 transition-all delay-200 duration-300`}
+      className={`${containerClass} fixed left-0 top-0 z-[9998] flex h-full w-full items-center justify-center overflow-hidden bg-black/70 p-5 font-theme transition-all delay-200 duration-300`}
     >
       <div
-        className={`${popupClass} grid h-96 max-h-fit w-full max-w-md grid-cols-1 place-content-start place-items-center gap-10 rounded-lg border border-zinc-800 bg-zinc-900 p-5 shadow-xl transition-all duration-300`}
+        className={`${popupClass} grid max-h-fit w-full max-w-md grid-cols-1 place-content-start place-items-center gap-10 rounded-lg border border-zinc-800 bg-zinc-900 p-5 shadow-xl transition-all duration-300`}
       >
         <span key={alertPopup.status} className="default-fade-in">
           <Icon iconName={alertPopup.status} />
@@ -35,7 +35,7 @@ function AlertPopup(): JSX.Element | null {
           type="button"
           onClick={deactivateAlertPopup}
         >
-          Tamam
+          Okay
         </button>
       </div>
     </div>
