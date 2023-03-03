@@ -1,55 +1,24 @@
 {
   "header": {
-    "links": ["Home", "Layout", "Github"]
+    "links": ["Home", "GitHub"]
   },
   "homepage": {
-    "heading": "Faster way to build projects",
+    "heading": "Faster Way to Build Projects",
     "description": "Jumpstart with this Next.JS TypeScript multi-purpose boilerplate. Next.JS, TypeScript, deployment helpers, linters, SEO helpers, multilingual web apps  and pure pop-up layouts make building web applications a breeze. Expand and customize as needed to fit project's unique requirements.",
-    "features": {
-      "heading": "Features",
-      "elements": [
-        {
-          "heading": "TypeScript",
-          "description": "It's is built with TypeScript. TypeScipt is a typed superset of JavaScript that compiles to plain JavaScript."
-        },
-        {
-          "heading": "Deployment Helpers",
-          "description": "Includes deployment helpers to make your project easier to deploy, like Base URL, Auto sitemap, etc."
-        },
-        {
-          "heading": "Linters",
-          "description": "Includes ESLint and Prettier configured for TypeScript to make your code more readable and consistent."
-        },
-        {
-          "heading": "SEO Helpers",
-          "description": "Includes SEO helpers to make your project more search engine friendly, like Meta Tags, Open Graph, OG tags, etc."
-        },
-        {
-          "heading": "Layout",
-          "description": "Includes a layout feature that includes expandable components: i18n and popup wrapper and more."
-        }
-      ]
-    },
-    "last-text": "and much more."
-  },
-
-  "layout": {
-    "heading": "Layout",
-    "description": "Includes a layout feature that includes expandable components: i18n and popup wrapper and more.",
-    "popups": {
-      "heading": "Popups",
-      "description": "The context-based approach enables seamless integration of popup components, making it easy to integrate into your project. With expandability in mind, the layout can accommodate additional popups to take your application to the next level.",
-      "examples": {
-        "heading": "Examples",
-        "last-text": "and much more, it's up to you."
+    "last-text": "and much more.",
+    "feature-blocks": [
+      {
+        "heading": "Next.js + TypeScript",
+        "description": "Create web applications by extending the latest React features using flexible React framework, Next.JS. That gives you building blocks to create fast web applications with TypeScript."
+      },
+      {
+        "heading": "Ready to Go.",
+        "description": "Implemented and ready to go features & helpers like SEO, i18n, layouts and much more. Feel free to expand and customize as needed to fit project's requirements."
+      },
+      {
+        "heading": "Easy.",
+        "description": "Easy deployment to anywhere in any environment. Auto Subpath support. Static export. Serverless. Ready to use linters & prettier, no configuration required."
       }
-    },
-    "multilingual": {
-      "heading": "Multilingual",
-      "description": "Includes expandable multilingual layout to make your project multilingual, ready to use i18n.",
-      "example": {
-        "heading": "Example"
-      }
-    }
+    ]
   }
 }

@@ -1,55 +1,24 @@
 {
   "header": {
-    "links": ["Anasayfa", "Yapı", "Github"]
+    "links": ["Anasayfa", "GitHub"]
   },
   "homepage": {
-    "heading": "Hızlı proje geliştirme yolu",
-    "description": "Next.JS TypeScript çok amaçlı şablonu ile web uygulamaları oluşturmak kolaylaşıyor. Next.JS, TypeScript, dağıtım yardımcıları, linterlar, SEO yardımcıları, çoklu dil desteği ve paketsiz pop-up düzenleri ile web uygulamaları oluşturmak artık çok kolay. Projelerin benzersiz ihtiyaçlarına uyacak şekilde genişletilebilir ve özelleştirilebilir.",
-    "features": {
-      "heading": "Özellikler",
-      "elements": [
-        {
-          "heading": "TypeScript",
-          "description": "TypeScript ile oluşturuldu. TypeScript, düz JavaScript'e derlenebilen, tip dışavurumu içeren bir JavaScript üst kümesidir."
-        },
-        {
-          "heading": "Deployment Yardımcıları",
-          "description": "Projenizin dağıtımını kolaylaştırmak için Base URL, Otomatik site haritası vb. gibi dağıtım yardımcılarını içerir."
-        },
-        {
-          "heading": "Linter",
-          "description": "Kodunuzu daha okunaklı ve tutarlı hale getirmek için TypeScript için yapılandırılmış ESLint ve Prettier dahil edilmiştir."
-        },
-        {
-          "heading": "SEO Yardımcıları",
-          "description": "Projenizi arama motoru dostu hale getirmek için Meta Etiketleri, Open Graph, OG etiketleri vb. gibi SEO yardımcılarını içerir."
-        },
-        {
-          "heading": "Yapı",
-          "description": "Genişletilebilir bileşenler içeren bir düzen özelliği içerir: i18n (çoklu dil), hazır popup yapıları ve daha fazlası."
-        }
-      ]
-    },
-    "last-text": "ve daha fazlası."
-  },
-
-  "layout": {
-    "heading": "Yapı",
-    "description": "Genişletilebilir bileşenler içeren bir düzen özelliği içerir: i18n (çoklu dil), hazır popup yapıları ve daha fazlası.",
-    "popups": {
-      "heading": "Pop-uplar",
-      "description": "Context temelli yaklaşım, popup bileşenlerinin sorunsuz bir şekilde entegre edilmesine olanak tanır ve projenize entegre etmeyi kolaylaştırır. Genişletilebilirlik göz önünde bulundurularak, düzen ek pop-up'ları barındırarak uygulamanızı bir sonraki seviyeye taşıyabilir.",
-      "examples": {
-        "heading": "Örnekler",
-        "last-text": "ve daha fazlası, tamamen size kalmış."
+    "heading": "Projeleri Geliştirmenin Daha Hızlı Yolu",
+    "description": "Bu çok amaçlı şablon ile temiz bir başlangıç yapın. Next.JS, TypeScript, deployment yardımcıları, linterlar, SEO yardımcıları, çoklu dil ve düzenler, web uygulamaları geliştirmeyi kolaylaştırır. Projelerin ihtiyaçlarına uyacak şekilde genişletin ve özelleştirin.",
+    "last-text": "ve daha fazlası.",
+    "feature-blocks": [
+      {
+        "heading": "Next.js + TypeScript",
+        "description": "Genişletilebilir React Framework'ü Next.JS ile birlikte TypeScript ile yazılmış bir çok amaçlı şablon."
+      },
+      {
+        "heading": "Geliştirmeye Hazır.",
+        "description": "SEO, i18n, düzenler ve daha fazlası gibi hazır ve çalışan özellikler ve yardımcılar içerir. Projelerin ihtiyaçlarına uyacak şekilde genişletilebilir ve özelleştirilebilir."
+      },
+      {
+        "heading": "Kolay.",
+        "description": "Herhangi bir ortama dağıtıma hazır. oto SupPath desteği. Statik dışa aktarma. Serverless. Linterlar ve prettier, kullanıma hazır, yapılandırma gerekmez."
       }
-    },
-    "multilingual": {
-      "heading": "Çoklu Dil",
-      "description": "Projenizi çoklu dil desteği ile kullanıma hazır hale getirmek için genişletilebilir çoklu dil düzeni ve i18n desteği dahil edilmiştir.",
-      "example": {
-        "heading": "Örnek"
-      }
-    }
+    ]
   }
 }
