@@ -1,31 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
+import { useLanguage } from '@/contexts/Language.context';
+
 import {
   HeaderLink,
-  HeaderLinkClassName,
   MobileMenuProps,
+  HeaderLinkClassName,
 } from '@/types/header.types';
 
 import BeyondLogo from '@/public/assets/img/beyond.png';
-import { useLanguage } from '@/contexts/Language.context';
 
 const ClassNames: HeaderLinkClassName = {
   desktop:
-    'text-zinc-400 hover:text-white px-4 py-2 bg-white/10 rounded-md transition-all duration-150 hover:bg-white/20',
+    'text-zinc-400 hover:text-white text-base transition-all duration-150 hover:text-white',
   mobile:
-    'text-zinc-400 hover:text-white px-4 py-2 bg-white/10 rounded-md transition-all duration-150 hover:bg-white/20',
+    'text-zinc-400 hover:text-white text-base transition-all duration-150 hover:text-white',
 };
 
 function MobileMenu({ isActive, children }: MobileMenuProps): JSX.Element {
   return (
     <div
-      className={`${
-        isActive ? 'translate-x-0' : 'translate-x-full'
-      } fixed left-0 top-0 z-[49] flex h-full w-full flex-col items-center justify-start bg-black px-5 pt-[150px] transition-all duration-500`}
+      className={`${isActive ? 'translate-x-0' : 'translate-x-full'}
+        fixed left-0 top-0 z-[49] flex h-full w-full flex-col items-center justify-start bg-black px-5 transition-all duration-500 lg:hidden`}
     >
-      <ul className="flex flex-col items-center justify-center gap-10">
+      <ul className="flex h-full w-full flex-col items-center justify-center gap-10 overflow-y-auto py-[150px]">
         {children}
       </ul>
     </div>
@@ -33,9 +34,10 @@ function MobileMenu({ isActive, children }: MobileMenuProps): JSX.Element {
 }
 
 export default function Header(): JSX.Element {
+  const Router = useRouter();
   const { formatMessage: t } = useIntl();
-  const [mobileMenu, setMobileMenu] = React.useState<boolean>(false);
   const { language, changeLanguage } = useLanguage();
+  const [mobileMenu, setMobileMenu] = React.useState<boolean>(false);
 
   const HeaderLinks: HeaderLink[] = [
     {
@@ -50,15 +52,6 @@ export default function Header(): JSX.Element {
     {
       id: 1,
       name: 'header.links.1',
-      url: '/layout',
-      classNames: {
-        desktop: ClassNames.desktop,
-        mobile: ClassNames.mobile,
-      },
-    },
-    {
-      id: 3,
-      name: 'header.links.2',
       url: 'https://github.com/beyond-codes/next-ts-template',
       classNames: {
         desktop: ClassNames.desktop,
@@ -128,6 +121,10 @@ export default function Header(): JSX.Element {
     };
   }, [mobileMenu]);
 
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [Router]);
+
   return (
     <header className="fixed left-0 top-0 z-[10] flex min-h-[100px] w-full items-center justify-center border-b border-b-zinc-800 bg-black font-theme shadow-xl">
       <section className="flex w-full max-w-theme flex-wrap items-center justify-between gap-5 p-5">
@@ -149,7 +146,7 @@ export default function Header(): JSX.Element {
               className={ClassNames.desktop}
               onClick={() => changeLanguage(language === 'tr' ? 'en' : 'tr')}
             >
-              {language === 'tr' ? 'EN' : 'TR'}
+              EN/TR
             </button>
           </li>
         </nav>

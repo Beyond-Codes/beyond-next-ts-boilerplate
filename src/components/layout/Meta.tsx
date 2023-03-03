@@ -6,9 +6,10 @@ import { useRouter } from 'next/router';
 type MetaProps = {
   title: string;
   description: string;
+  favIconType?: 'png' | 'jpg' | 'jpeg' | 'ico'; // ? You can add more types..
 };
 
-function Meta({ title, description }: MetaProps): JSX.Element {
+function Meta({ title, description, favIconType }: MetaProps): JSX.Element {
   const router = useRouter();
 
   return (
@@ -22,8 +23,8 @@ function Meta({ title, description }: MetaProps): JSX.Element {
         />
         <link
           rel="icon"
-          href={`${router.basePath}/favicon.ico`}
-          key="favicon"
+          href={`${router.basePath}/favicon.${favIconType}`}
+          type="image/x-icon"
         />
       </Head>
       <NextSeo
@@ -32,11 +33,15 @@ function Meta({ title, description }: MetaProps): JSX.Element {
         openGraph={{
           title,
           description,
-          site_name: process.env.NEXT_PUBLIC_SITE_NAME,
+          site_name: process.env.NEXT_PUBLIC_APP_NAME,
         }}
       />
     </>
   );
 }
+
+Meta.defaultProps = {
+  favIconType: 'ico',
+};
 
 export default Meta;
