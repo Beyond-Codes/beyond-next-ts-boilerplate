@@ -36,31 +36,32 @@ export default function PopupWrapper({
     onCancel: () => {},
   });
 
-  const activateAlertPopup: (
-    text: string,
-    status: PopupStatusTypes
-  ) => Promise<void> = async (text, status) => {
-    setAlertPopup({
-      inHTML: true,
-      isActive: false,
-      status,
-      text,
-    });
+  const activateAlertPopup = React.useCallback(
+    async (text: string, status: PopupStatusTypes) => {
+      setAlertPopup({
+        inHTML: true,
+        isActive: false,
+        status,
+        text,
+      });
 
-    await Wait(50);
-    setAlertPopup({
-      inHTML: true,
-      isActive: true,
-      status,
-      text,
-    });
-  };
+      await Wait(50);
+      setAlertPopup({
+        inHTML: true,
+        isActive: true,
+        status,
+        text,
+      });
+    },
+    [alertPopup]
+  );
 
-  const deactivateAlertPopup: () => Promise<void> = async () => {
-    setAlertPopup({
-      ...alertPopup,
+  const deactivateAlertPopup = React.useCallback(async () => {
+    setAlertPopup((prev) => ({
+      ...prev,
       isActive: false,
-    });
+    }));
+
     await Wait(500);
     setAlertPopup({
       inHTML: false,
@@ -68,38 +69,36 @@ export default function PopupWrapper({
       status: 'loading',
       text: '',
     });
-  };
+  }, [alertPopup]);
 
-  const activateConfirmPopup: (
-    text: string,
-    onConfirm?: () => void,
-    onCancel?: () => void
-  ) => Promise<void> = async (text, onConfirm, onCancel) => {
-    setConfirmPopup({
-      inHTML: true,
-      isActive: false,
-      text,
-      onConfirm,
-      onCancel,
-    });
-    await Wait(50);
-    setConfirmPopup({
-      inHTML: true,
-      isActive: true,
-      text,
-      onConfirm,
-      onCancel,
-    });
-  };
+  const activateConfirmPopup = React.useCallback(
+    async (text: string, onConfirm?: () => void, onCancel?: () => void) => {
+      setConfirmPopup({
+        inHTML: true,
+        isActive: false,
+        text,
+        onConfirm,
+        onCancel,
+      });
 
-  const deactivateConfirmPopup: () => Promise<void> = async () => {
-    setConfirmPopup({
-      inHTML: true,
+      await Wait(50);
+      setConfirmPopup({
+        inHTML: true,
+        isActive: true,
+        text,
+        onConfirm,
+        onCancel,
+      });
+    },
+    [confirmPopup]
+  );
+
+  const deactivateConfirmPopup = React.useCallback(async () => {
+    setConfirmPopup((prev) => ({
+      ...prev,
       isActive: false,
-      text: '',
-      onConfirm: () => {},
-      onCancel: () => {},
-    });
+    }));
+
     await Wait(500);
     setConfirmPopup({
       inHTML: false,
@@ -108,7 +107,7 @@ export default function PopupWrapper({
       onConfirm: () => {},
       onCancel: () => {},
     });
-  };
+  }, [confirmPopup]);
 
   const value: PopupContextType = React.useMemo(
     () => ({
@@ -119,14 +118,7 @@ export default function PopupWrapper({
       activateConfirmPopup,
       deactivateConfirmPopup,
     }),
-    [
-      alertPopup,
-      confirmPopup,
-      activateAlertPopup,
-      deactivateAlertPopup,
-      activateConfirmPopup,
-      deactivateConfirmPopup,
-    ]
+    [alertPopup, confirmPopup]
   );
 
   React.useEffect(() => {
