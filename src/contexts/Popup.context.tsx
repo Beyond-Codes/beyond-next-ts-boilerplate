@@ -26,6 +26,7 @@ export default function PopupWrapper({
     isActive: false,
     status: 'loading',
     text: '',
+    onConfirm: () => {},
   });
 
   const [confirmPopup, setConfirmPopup] = React.useState<ConfirmPopupType>({
@@ -35,26 +36,6 @@ export default function PopupWrapper({
     onConfirm: () => {},
     onCancel: () => {},
   });
-
-  const activateAlertPopup = React.useCallback(
-    async (text: string, status: PopupStatusTypes) => {
-      setAlertPopup({
-        inHTML: true,
-        isActive: false,
-        status,
-        text,
-      });
-
-      await Wait(50);
-      setAlertPopup({
-        inHTML: true,
-        isActive: true,
-        status,
-        text,
-      });
-    },
-    [alertPopup]
-  );
 
   const deactivateAlertPopup = React.useCallback(async () => {
     setAlertPopup((prev) => ({
@@ -70,6 +51,28 @@ export default function PopupWrapper({
       text: '',
     });
   }, [alertPopup]);
+
+  const activateAlertPopup = React.useCallback(
+    async (text: string, status: PopupStatusTypes, onConfirm?: () => void) => {
+      setAlertPopup({
+        inHTML: true,
+        isActive: false,
+        status,
+        text,
+        onConfirm,
+      });
+
+      await Wait(50);
+      setAlertPopup({
+        inHTML: true,
+        isActive: true,
+        status,
+        text,
+        onConfirm,
+      });
+    },
+    [alertPopup]
+  );
 
   const activateConfirmPopup = React.useCallback(
     async (text: string, onConfirm?: () => void, onCancel?: () => void) => {
