@@ -33,7 +33,7 @@ function AlertPopup(): JSX.Element | null {
           disabled={alertPopup?.status === 'loading'}
           className="min-w-[90px] bg-black/50 px-4 py-1 text-center text-sm text-white transition-all duration-150 hover:bg-black/20 disabled:pointer-events-none disabled:opacity-50"
           type="button"
-          onClick={deactivateAlertPopup}
+          onClick={alertPopup.onConfirm || deactivateAlertPopup}
         >
           Okay
         </button>

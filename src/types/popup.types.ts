@@ -5,6 +5,7 @@ export type AlertPopupType = {
   isActive: boolean;
   status: PopupStatusTypes;
   text: string;
+  onConfirm?: () => void;
 };
 
 export type ConfirmPopupType = {
@@ -18,7 +19,11 @@ export type ConfirmPopupType = {
 export type PopupContextType = {
   alertPopup: AlertPopupType | null;
   confirmPopup: ConfirmPopupType | null;
-  activateAlertPopup: (text: string, status: PopupStatusTypes) => void;
+  activateAlertPopup: (
+    text: string,
+    status: PopupStatusTypes,
+    onConfirm?: () => void
+  ) => void;
   activateConfirmPopup: (
     text: string,
     onConfirm?: () => void,
