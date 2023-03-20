@@ -1,4 +1,8 @@
 {
+  "errors": {
+    "default": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+    "userNotFound": "Kullanıcı bulunamadı."
+  },
   "header": {
     "links": ["Anasayfa", "GitHub"]
   },

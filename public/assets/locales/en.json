@@ -1,4 +1,8 @@
 {
+  "errors": {
+    "default": "Something went wrong. Please try again later.",
+    "userNotFound": "User not found."
+  },
   "header": {
     "links": ["Home", "GitHub"]
   },
