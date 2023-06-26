@@ -1,6 +1,6 @@
 import { Axios } from 'axios';
 import API from '@/common/configs/api.config';
-import { IApiClient } from '@/types/boilerplate.types';
+import { IApiClient, IClientResponse } from '@/types/boilerplate.types';
 import ClientError from '@/common/handlers/error.handler';
 
 class ApiClient implements IApiClient {
@@ -22,12 +22,12 @@ class ApiClient implements IApiClient {
       return {
         data,
         error: null,
-      };
+      } as IClientResponse<{ name: string }[], null>;
     } catch (error: any) {
       return {
         data: null,
         error: error?.message || this.defaultError,
-      };
+      } as IClientResponse<null, string>;
     }
   }
 
@@ -53,6 +53,6 @@ class ApiClient implements IApiClient {
   }
 }
 
-const apiHelper = new ApiClient();
+const apiClient = new ApiClient();
 
-export default apiHelper;
+export default apiClient;
