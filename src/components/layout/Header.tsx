@@ -4,13 +4,12 @@ import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 
+import Logo from '@/public/assets/img/beyond.png';
 import {
   HeaderLink,
   MobileMenuProps,
   HeaderLinkClassName,
 } from '@/types/header.types';
-
-import Logo from '@/public/assets/img/beyond.png';
 
 const ClassNames: HeaderLinkClassName = {
   desktop: 'text-black',

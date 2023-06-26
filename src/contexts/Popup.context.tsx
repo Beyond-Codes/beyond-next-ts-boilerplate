@@ -1,13 +1,14 @@
 import React from 'react';
 import Wait from '@/common/utils/Wait.util';
-import {
-  AlertPopupType,
-  ConfirmPopupType,
-  PopupContextType,
-  PopupStatusTypes,
-} from '@/types/popup.types';
 
-const PopupContext = React.createContext<PopupContextType>({
+import {
+  IAlertPopup,
+  TPopupStatus,
+  IConfirmPopup,
+  IPopupContext,
+} from '@/types/boilerplate.types';
+
+const PopupContext = React.createContext<IPopupContext>({
   alertPopup: null,
   confirmPopup: null,
   activateAlertPopup: () => {},
@@ -21,7 +22,7 @@ export default function PopupWrapper({
 }: {
   children: JSX.Element | JSX.Element[];
 }) {
-  const [alertPopup, setAlertPopup] = React.useState<AlertPopupType>({
+  const [alertPopup, setAlertPopup] = React.useState<IAlertPopup>({
     inHTML: false,
     isActive: false,
     status: 'loading',
@@ -29,7 +30,7 @@ export default function PopupWrapper({
     onConfirm: () => {},
   });
 
-  const [confirmPopup, setConfirmPopup] = React.useState<ConfirmPopupType>({
+  const [confirmPopup, setConfirmPopup] = React.useState<IConfirmPopup>({
     inHTML: false,
     isActive: false,
     text: '',
@@ -53,7 +54,7 @@ export default function PopupWrapper({
   }, [alertPopup]);
 
   const activateAlertPopup = React.useCallback(
-    async (text: string, status: PopupStatusTypes, onConfirm?: () => void) => {
+    async (text: string, status: TPopupStatus, onConfirm?: () => void) => {
       setAlertPopup({
         inHTML: true,
         isActive: false,
@@ -112,7 +113,7 @@ export default function PopupWrapper({
     });
   }, [confirmPopup]);
 
-  const value: PopupContextType = React.useMemo(
+  const value: IPopupContext = React.useMemo(
     () => ({
       alertPopup,
       confirmPopup,
@@ -139,7 +140,7 @@ export default function PopupWrapper({
   );
 }
 
-export function usePopup(): PopupContextType {
+export function usePopup(): IPopupContext {
   const context = React.useContext(PopupContext);
   if (context === undefined) {
     throw new Error('usePopup must be used within a PopupWrapper');

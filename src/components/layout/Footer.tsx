@@ -1,9 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { BsInstagram } from 'react-icons/bs';
-import { FooterSocialLink } from '@/types/footer.types';
-
 import Logo from '@/public/assets/img/beyond.png';
+import { FooterSocialLink } from '@/types/footer.types';
 
 function Footer(): JSX.Element {
   const FooterSocialLinks: FooterSocialLink[] = [

@@ -1,6 +1,6 @@
-import { IHelperError } from '@/types/helper.types';
+import { IClientError } from '@/types/boilerplate.types';
 
-class HelperError extends Error implements IHelperError {
+class ClientError extends Error implements IClientError {
   readonly name: string;
 
   readonly message: string;
@@ -15,4 +15,4 @@ class HelperError extends Error implements IHelperError {
   }
 }
 
-export default HelperError;
+export default ClientError;

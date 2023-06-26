@@ -1,13 +1,15 @@
 import React from 'react';
 import flatten from 'flat';
 import { IntlProvider } from 'react-intl';
-import {
-  LanguageContextType,
+
+import type {
+  ILanguageContext,
+  IUseLanguage,
   TranslationFile,
-  UseLanguageHook,
-} from '@/types/language.types';
+} from '@/types/boilerplate.types';
 
 // ? Translation files
+
 import EN from '@/public/assets/locales/en.json';
 
 const DefaultLanguage =
@@ -17,7 +19,7 @@ const Translations = {
   en: EN as TranslationFile,
 } as const;
 
-const LanguageContext = React.createContext<LanguageContextType>({
+const LanguageContext = React.createContext<ILanguageContext>({
   language: DefaultLanguage,
   changeLanguage: () => {},
 });
@@ -32,7 +34,7 @@ export default function LanguageWrapper({ children }: any) {
   const value = React.useMemo(
     () => ({ language, changeLanguage }),
     [language]
-  ) as LanguageContextType;
+  ) as ILanguageContext;
 
   return (
     <LanguageContext.Provider value={value}>
@@ -47,7 +49,7 @@ export default function LanguageWrapper({ children }: any) {
 }
 
 export function useLanguage() {
-  const context = React.useContext<UseLanguageHook>(LanguageContext);
+  const context = React.useContext<IUseLanguage>(LanguageContext);
 
   if (context === undefined) {
     throw new Error('useLanguage must be used within a LanguageWrapper');

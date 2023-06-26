@@ -1,9 +1,9 @@
 import { Axios } from 'axios';
 import API from '@/common/configs/api.config';
-import { ApiHelperClass } from '@/types/helper.types';
-import HelperError from '../handlers/error.handler';
+import { IApiClient } from '@/types/boilerplate.types';
+import ClientError from '@/common/handlers/error.handler';
 
-class ApiHelper implements ApiHelperClass {
+class ApiClient implements IApiClient {
   public readonly API: Axios;
 
   public readonly defaultError: string;
@@ -16,7 +16,7 @@ class ApiHelper implements ApiHelperClass {
   public async getCountries() {
     try {
       const { data } = await this.API.get('/countries').catch((error) => {
-        throw new HelperError(this.errorHandler(error));
+        throw new ClientError(this.errorHandler(error));
       });
 
       return {
@@ -53,6 +53,6 @@ class ApiHelper implements ApiHelperClass {
   }
 }
 
-const apiHelper = new ApiHelper();
+const apiHelper = new ApiClient();
 
 export default apiHelper;
